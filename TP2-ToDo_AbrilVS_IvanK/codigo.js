@@ -19,23 +19,51 @@ const Agregar=() =>{
 const mostrarTareas = () =>{
     document.getElementById("mostrar").innerHTML = ""
 
-    //recorro el array
-    //pinto en pantalla mi array
     Lista.map(obj => 
     {        
-        
+        let estaTachado = "";
+        let checked = "";
+
+        if(obj.esTachado)
+        {
+            checked = "checked";
+            estaTachado = "tachar";
+        }
+
         document.getElementById("mostrar").innerHTML +=`
-        <br>
-            <input type="checkbox" onclick="Marcar(${obj.id})">${obj.titulo}
-            </br>
+        <br></br>
+            <p class="${estaTachado}"><input type="checkbox" ${checked} onclick="Marcar(${obj.id})">${obj.titulo}</p>
+        
         `;
     });    
 }
 
+const Marcar = idi => {
+    Lista.map(obj =>{
+        if(obj.id==idi){
+            obj.esTachado= !obj.esTachado;
+            console.log(obj.titulo)
+            obj.fechaFin=Date.now();            
+        }
+    }) 
 
-
-const Marcar = (id)=>{
-    //recorrer el array buscando el elemento con ese id.
-    //modifican el valor del esTachado. 
-    //llaman a mostrarTareas
+    mostrarTareas();
+}    
+var minNum = 999999999;
+var maxNom="ay"
+const Calc= ()=>{
+    Lista.map(obj =>{
+        if(obj.esTachado){
+            let resta= obj.fechaFin-obj.fechaInicio;
+            console.log(resta);
+            if(resta< minNum){
+                minNum=resta;
+                maxNom=obj.titulo;
+            }
+                    
+        }
+    })
+    document.getElementById("max").innerHTML +=`
+        <p>${maxNom}</p>
+    `
 }

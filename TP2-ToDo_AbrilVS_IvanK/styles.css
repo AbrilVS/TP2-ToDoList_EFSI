@@ -1,0 +1,33 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.tachar{
+    text-decoration: line-through;
+}
+
+.cont-ingreso{
+    width: 40%;
+}
+
+.contenedori{
+    padding:20%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.botones{
+    width: 40%;
+    display: flex;
+    align-self: anchor-center;
+}
+
+.boton1{
+    width: 50x;
+}
+
+.boton2{
+    width: 50px;
+}

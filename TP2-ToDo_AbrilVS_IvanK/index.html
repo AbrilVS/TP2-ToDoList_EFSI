@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input type="text" id="txt">
-    <div id="mostrar"></div>
-   
-    <button onclick="Agregar()">Agregar</button>
+    <div class="contenedori">
+            <input type="text" id="txt" class="cont-ingreso">
+            <div id="mostrar"></div>
+            <div id="max"></div>
+        <div class="botones">
+            <button onclick="Agregar()" class="boton1">Agregar</button>
+            <button onclick="Calc()" class="boton2">Tarea mas rapida</button>
+        </div>
+    </div>
     
 
     <script src= "codigo.js"></script>
